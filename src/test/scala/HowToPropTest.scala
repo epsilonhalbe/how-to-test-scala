@@ -14,5 +14,10 @@ class HowToPropTest extends Specification with ScalaCheck {
           (1 to n).sum == n*(n+1) / 2
         )).setGen(Gen.choose(1,46341))
     }
+
+    "demonstrate shrinking" >> {
+      prop ((x : List[Int]) => HowTo.contrivedExample(x).isRight
+      )
+    }
   }
 }
