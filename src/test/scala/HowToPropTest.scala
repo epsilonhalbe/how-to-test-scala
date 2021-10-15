@@ -12,7 +12,7 @@ class HowToPropTest extends Specification with ScalaCheck {
       prop (
         (n : Int) => (
           (1 to n).sum == n*(n+1) / 2
-        )).setGen(Gen.choose(1,Int.MaxValue))
+        )).setGen(Gen.choose(1,65535))
     }
   }
 }
