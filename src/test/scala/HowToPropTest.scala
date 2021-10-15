@@ -10,7 +10,7 @@ class HowToPropTest extends Specification with ScalaCheck {
 
     "sum of odd numbers up to n is equal to the square of that number" >> {
       prop (
-        (n : Int) => (
+        (n : Int) => (n > 0 && n < 46341) ==> (
           (1 to n).sum == n*(n+1) / 2
         )).setGen(Gen.choose(1,46341))
     }
