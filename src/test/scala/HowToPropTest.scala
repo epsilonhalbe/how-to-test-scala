@@ -12,7 +12,7 @@ class HowToPropTest extends Specification with ScalaCheck {
       prop (
         (n : Int) => (n > 0 && n < 46341) ==> (
           (1 to n).sum == n*(n+1) / 2
-        ))
+        )).setGen(Gen.choose(1,46341))
     }
   }
 }
